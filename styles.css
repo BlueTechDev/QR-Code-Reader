@@ -1,26 +1,35 @@
-html body {
+html, body {
     font-family: "Helvetica Neue", Helvetica, Arial;
-    background-color: #add8e6
+    background-color: #add8e6;
+    height: 100%; /* Ensure full height for the body */
+    margin: 0; /* Remove default margin to avoid unexpected spacing */
+    padding: 0; /* Remove default padding */
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100%; /* Center content vertically within the viewport */
 }
 
 .card {
     background-color: #fff;
     border: solid #fff 2px;
     border-radius: 35px;
+    max-width: 400px;
+    width: 100%;
 }
 
 .qr-body {
     padding: 20px;
     color: #000;
     margin-top: 15px;
-    
+}
+
+.qr-body img {
+    max-width: 100%;
+    height: auto;
 }
 
 .qr-body h2 {
@@ -34,4 +43,24 @@ html body {
     line-height: 1.5;
     color: #a9acb5;
     opacity: .9;
+}
+
+
+/* Media query for screens smaller than 768px (typical mobile screens) */
+@media (max-width: 768px) {
+    .card {
+        border-radius: 15px; /* Reduce border-radius for smaller screens */
+    }
+
+    .qr-body {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .qr-body h2 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .qr-body p {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
 }
